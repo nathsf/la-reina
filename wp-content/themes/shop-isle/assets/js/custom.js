@@ -253,12 +253,12 @@
 			if ($(this).data('items') > 0) {
 				items = $(this).data('items');
 			} else {
-				items = 4;
+				items = 2;
 			}
 
 			// Check pagination true/false
 			if (($(this).data('pagination') > 0) && ($(this).data('pagination') === true)) {
-				pagination = true;
+				pagination = false;
 			} else {
 				pagination = false;
 			}
@@ -267,7 +267,7 @@
 			if (($(this).data('navigation') > 0) && ($(this).data('navigation') === true)) {
 				navigation = true;
 			} else {
-				navigation = false;
+				navigation = true;
 			}
 
 			// Build carousel
@@ -277,7 +277,7 @@
 				pagination: pagination,
 				paginationSpeed: 400,
 				singleItem: false,
-				items: items,
+				items: 2,
 				slideSpeed: 300,
 				autoPlay: 5000
 			});
