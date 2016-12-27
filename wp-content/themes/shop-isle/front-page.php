@@ -104,7 +104,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					if( function_exists('woocommerce_get_product_thumbnail') ) {
 						echo '<a href="'.esc_url( get_permalink() ).'">' . woocommerce_get_product_thumbnail().'</a>';
 					}
-					echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
+					echo '<h4 class="shop-item-title font-alt white-title"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
 
 					$rating_html = '';
 					if( function_exists( 'method_exists' ) && method_exists( $product, 'get_rating_html' ) && method_exists( $product, 'get_average_rating' ) ) {
@@ -248,6 +248,48 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		echo '</section><!-- .home-product-slider -->';
 	}
 
+
+	/**********************************/
+	/*********    VIDEO **************/
+	/*********************************/
+
+	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
+	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
+	$shop_isle_yt_thumbnail = get_theme_mod('shop_isle_yt_thumbnail');
+
+	
+	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {
+		echo '<section class="module module-video bg-dark-30 bg-orange">';
+	} elseif ( !empty($shop_isle_yt_link) && is_customize_preview() ) {
+		echo '<section class="module module-video bg-dark-30 bg-orange ">';
+	}
+
+	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && is_customize_preview() )  ) {
+
+		echo '<div class="module-video-thumbnail hidden-xs hidden-sm"'. ( !empty( $shop_isle_yt_thumbnail ) ? ' style="background-image: url('.$shop_isle_yt_thumbnail.')' : '' ) .'"></div>';
+
+		echo '<div>';
+		$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
+		if( !empty($shop_isle_video_title) ):
+			echo '<div class="col-sm-12 col-sm-offset-0 col-md-6 col-lg-6 col-lg-offset-6 ">';
+			echo '<div class="row">';
+			echo '<div class="col-sm-12 " style="padding-left: 5%; padding-right: 5%;">';
+			echo '<h2 class="font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
+			echo '<p class="event-title ">Aniversario 23 años noviembre</p>';
+			echo '<p class="event-description ">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+		endif;
+		?>
+		
+		<?php
+		echo '</div>';
+
+		echo '</section><!-- .module-video -->';
+
+	} /* END VIDEO */
+
 	/*********************************/
 	/******* Latest products *********/
 	/*********************************/
@@ -267,15 +309,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		echo '<div style="width:100%; padding-left: 2%;
     padding-right: 2%;" class="">';
 
-		$shop_isle_products_title = get_theme_mod('shop_isle_products_title',__( 'Latest products', 'shop-isle' ));
-		if( !empty($shop_isle_products_title) ) {
-			echo '<div class="row">';
-			echo '<div class="col-sm-6 col-sm-offset-3">';
-			echo '<h2 class="module-title font-alt product-hide-title">'.$shop_isle_products_title.'</h2>';
-			echo '</div>';
-			echo '</div>';
-		}
-
+		
 		$shop_isle_products_shortcode = get_theme_mod('shop_isle_products_shortcode');
 		$shop_isle_products_category = get_theme_mod('shop_isle_products_category');
 
@@ -395,7 +429,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 				echo '</div><!-- .row.multi-columns-row -->';
 
-				echo '<div class="row mt-30">';
+				echo '<div class="row mt-30 hidden">';
 				echo '<div class="col-sm-12 align-center">';
 				if( function_exists('woocommerce_get_page_id') ) {
 					echo '<a href="'.esc_url( get_permalink( woocommerce_get_page_id( 'shop' )) ).'" class="btn btn-b btn-round">'.__('See all products','shop-isle').'</a>';
@@ -546,52 +580,6 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 	} /* END Latest products */
 
-
-	/**********************************/
-	/*********    VIDEO **************/
-	/*********************************/
-
-	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
-	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
-	$shop_isle_yt_thumbnail = get_theme_mod('shop_isle_yt_thumbnail');
-
-	if( empty($shop_isle_yt_thumbnail) ) {
-		$shop_isle_do_video_thumbnail = preg_match( '/\/\/(www\.)?(youtu|youtube)\.(com|be)\/(watch|embed)?\/?(\?v=)?([a-zA-Z0-9\-\_]+)/', $shop_isle_yt_link, $shop_isle_youtube_matches );
-		$shop_isle_youtube_id = ! empty( $shop_isle_youtube_matches ) ? $shop_isle_youtube_matches[6] : '';
-		$shop_isle_yt_thumbnail = 'https://img.youtube.com/vi/' . $shop_isle_youtube_id . '/maxresdefault.jpg';
-	}
-
-	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) {
-		echo '<section class="module module-video bg-dark-30">';
-	} elseif ( !empty($shop_isle_yt_link) && is_customize_preview() ) {
-		echo '<section class="module module-video bg-dark-30 shop_isle_hidden_if_not_customizer">';
-	}
-
-	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && is_customize_preview() )  ) {
-
-		echo '<div class="module-video-thumbnail"'. ( !empty( $shop_isle_yt_thumbnail ) ? ' style="background-image: url('.$shop_isle_yt_thumbnail.')' : '' ) .'"></div>';
-
-		echo '<div>';
-		$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
-		if( !empty($shop_isle_video_title) ):
-			echo '<div class="container">';
-			echo '<div class="row">';
-			echo '<div class="col-sm-12">';
-			echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
-			echo '</div>';
-			echo '</div>';
-			echo '</div>';
-		endif;
-		?>
-		<!-- Youtube player start-->
-		<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
-		<!-- Youtube player end -->
-		<?php
-		echo '</div>';
-
-		echo '</section><!-- .module-video -->';
-
-	} /* END VIDEO */
 
 
 	/***********************/

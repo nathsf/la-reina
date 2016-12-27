@@ -1716,7 +1716,7 @@ a,
 .bg-dark {
 	background-color: #111 !important;
 }
-
+/*
 .bg-dark-30:before {
 	position: absolute;
 	background: rgba(34,34,34, .3);
@@ -1725,7 +1725,7 @@ a,
 	width: 100%;
 	left: 0;
 	top: 0;
-}
+} */
 
 .bg-dark-60:before {
 	position: absolute;
@@ -2164,7 +2164,7 @@ Home Section
 }
 
 .module-small.home-banners {
-	padding: 70px 0 30px;
+	padding: 0px 0 30px;
 }
 
 .home-product-slider {

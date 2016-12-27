@@ -272,7 +272,7 @@
 
 			// Build carousel
 			$(this).owlCarousel( {
-				navigationText: ['<i class="fa fa-angle-left">←</i>', '<i class="fa fa-angle-right"> →</i>'],
+				navigationText: ['<i class="fa fa-angle-left"><img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/prev-light.png"></i>', '<i class="fa fa-angle-right"> <img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/next-light.png"></i>'],
 				navigation: navigation,
 				pagination: pagination,
 				paginationSpeed: 400,
