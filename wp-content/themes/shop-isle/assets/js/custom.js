@@ -104,32 +104,6 @@
 		}
 
 		/* ---------------------------------------------- /*
-		 * Youtube video background
-		/* ---------------------------------------------- */
-
-		$(function(){
-			$(".video-player").mb_YTPlayer();
-		});
-
-		$('#video-play').click(function(event) {
-			event.preventDefault();
-			if ($(this).hasClass('fa-play')) {
-				$('.video-player').playYTP();
-			} else {
-				$('.video-player').pauseYTP();
-			}
-			$(this).toggleClass('fa-play fa-pause');
-			return false;
-		});
-
-		$('#video-volume').click(function(event) {
-			event.preventDefault();
-			$('.video-player').toggleVolume();
-			$(this).toggleClass('fa-volume-off fa-volume-up');
-			return false;
-		});
-
-		/* ---------------------------------------------- /*
 		 * Transparent navbar animation
 		/* ---------------------------------------------- */
 
@@ -246,7 +220,17 @@
 		/* ---------------------------------------------- /*
 		 * Owl slider
 		/* ---------------------------------------------- */
+		$('.slide-nosotros').owlCarousel({
+            responsiveClass: true,
+            autoplay:false,
+            navigationText: ['<i class="fa fa-angle-left"><img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/prev-light.png"></i>', '<i class="fa fa-angle-right"> <img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/next-light.png"></i>'],
+			navigation: true,
+			pagination: true,
+			paginationSpeed: 400,
+			singleItem: true,
+			slideSpeed: 300,
 
+        });
 		$('.owl-carousel').each(function(i) {
 
 			// Check items number
@@ -273,13 +257,13 @@
 			// Build carousel
 			$(this).owlCarousel( {
 				navigationText: ['<i class="fa fa-angle-left"><img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/prev-light.png"></i>', '<i class="fa fa-angle-right"> <img src="http://localhost/la-reina/wp-content/themes/shop-isle/assets/images/next-light.png"></i>'],
-				navigation: navigation,
+				navigation: true,
 				pagination: pagination,
 				paginationSpeed: 400,
 				singleItem: false,
 				items: 2,
 				slideSpeed: 300,
-				autoPlay: 5000
+				autoPlay: 5000				
 			});
 
 		});

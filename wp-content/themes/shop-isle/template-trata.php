@@ -2,7 +2,7 @@
 /**
  * The template for displaying about us page.
  *
- * Template Name: Servicios
+ * Template Name: Tratamientos
  *
  */
 
@@ -109,7 +109,7 @@ get_header(); ?>
 									echo '<div class="col-sm-6 ">';
 									
 										if( !empty($shop_isle_our_team_title) ) {
-											echo '<h2 class="module-title font-alt meet-out-team-title">'.$shop_isle_our_team_title.'</h2>';
+											echo '<h2 class="module-title font-alt meet-out-team-title"> Tratamientos</h2>';
 										}
 										
 										if( !empty($shop_isle_our_team_subtitle) ) {
@@ -124,7 +124,7 @@ get_header(); ?>
 								
 							}
 							
-							$shop_isle_team_members = get_theme_mod('shop_isle_team_members',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/team1.jpg' , 'text' => 'Eva Bean', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/team2.jpg' ,'text' => 'Maria Woods', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/team3.jpg' , 'text' => 'Booby Stone', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/team4.jpg' , 'text' => 'Anna Neaga', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )));
+							$shop_isle_team_members = get_theme_mod('shop_isle_team_members',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/tratamiento-1.png' , 'text' => 'Servicio de', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/tratamiento-2.png' ,'text' => 'Servicio de', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/tratamiento-3.png' , 'text' => 'Servicio de', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/tratamiento-4.png' , 'text' => 'Servicio de', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )));
 								
 								if( !empty( $shop_isle_team_members ) ) {
 												
@@ -227,138 +227,5 @@ get_header(); ?>
 				</section>
 				<!-- Team end -->
 				
-				<!-- Video start -->
-		<?php
-			$shop_isle_about_page_video_background = get_theme_mod('shop_isle_about_page_video_background',get_template_directory_uri().'/assets/images/background-video.jpg');
-			if( !empty($shop_isle_about_page_video_background) ):
-				echo '<section class="module bg-dark-60 about-page-video" data-background="'.esc_url( $shop_isle_about_page_video_background ).'">';
-			else:
-				echo '<section class="module bg-dark-60 about-page-video">';
-			endif;
-		?>
-		
-			<div class="container">
-
-				<div class="row">
-
-					<div class="col-sm-12">
-
-						<div class="video-box">
-							<?php
-								$shop_isle_about_page_video_link = get_theme_mod('shop_isle_about_page_video_link');
-								if( !empty($shop_isle_about_page_video_link) ):
-									echo '<div class="video-box-icon">';
-										echo '<a href="'.esc_url( $shop_isle_about_page_video_link ).'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
-									echo '</div>';
-								endif;
-								if( empty($shop_isle_about_page_video_link) && is_customize_preview() ):
-									echo '<div class="video-box-icon shop_isle_hidden_if_not_customizer">';
-										echo '<a href="'.esc_url( $shop_isle_about_page_video_link ).'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
-									echo '</div>';
-								endif;
-								
-								$shop_isle_about_page_video_title = get_theme_mod('shop_isle_about_page_video_title',__( 'Presentation', 'shop-isle' ));
-								$shop_isle_about_page_video_subtitle = get_theme_mod('shop_isle_about_page_video_subtitle',__( 'What the video about our new products', 'shop-isle' ));
-								
-								if( !empty($shop_isle_about_page_video_title) ):
-									echo '<div class="video-title font-alt">'.$shop_isle_about_page_video_title.'</div>';
-								endif;
-								
-								if( !empty($shop_isle_about_page_video_subtitle) ):
-									echo '<div class="video-subtitle font-alt">'.$shop_isle_about_page_video_subtitle.'</div>';
-								endif;
-								
-							?>
-							
-						</div>
-
-					</div>
-
-				</div><!-- .row -->
-
-			</div>
-		</section>
-		<!-- Video end -->
-
-		<!-- Features start -->
-		<section class="module module-advantages">
-			<div class="container">
-
-				<?php
-				
-				$shop_isle_our_advantages_title = get_theme_mod('shop_isle_our_advantages_title',__( 'Our advantages', 'shop-isle' ));
-				if( !empty($shop_isle_our_advantages_title) ):
-					echo '<div class="row">';
-						echo '<div class="col-sm-6 col-sm-offset-3">';
-							echo '<h2 class="module-title font-alt our_advantages">'.$shop_isle_our_advantages_title.'</h2>';
-						echo '</div>';
-					echo '</div>';	
-				endif;	
-				
-				$shop_isle_advantages = get_theme_mod('shop_isle_advantages',json_encode(array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')))));
-					
-				if( !empty( $shop_isle_advantages ) ):
-									
-					$shop_isle_advantages_decoded = json_decode($shop_isle_advantages);
-									
-					if( !empty($shop_isle_advantages_decoded) ):
-										
-						echo '<div class="row multi-columns-row">';
-									
-							foreach($shop_isle_advantages_decoded as $shop_isle_advantage):
-											
-								echo '<div class="col-sm-6 col-md-3 col-lg-3">';
-
-									echo '<div class="features-item">';
-									
-									
-										if( !empty($shop_isle_advantage->icon_value) ):
-											echo '<div class="features-icon">';
-											
-												if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-													$shop_isle_advantage_icon_value = icl_t( 'Advantage '.$shop_isle_advantage->id, 'Advantage icon',$shop_isle_advantage->icon_value );
-													echo '<span class="'.esc_attr( $shop_isle_advantage_icon_value ).'"></span>';
-												} else {
-													echo '<span class="'.esc_attr( $shop_isle_advantage->icon_value ).'"></span>';
-												}
-												
-											echo '</div>';
-										endif;	
-
-										if( !empty($shop_isle_advantage->text) ):
-										
-											if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-												$shop_isle_advantage_text = icl_t( 'Advantage '.$shop_isle_advantage->id, 'Advantage text', $shop_isle_advantage->text );
-												echo '<h3 class="features-title font-alt">'.$shop_isle_advantage_text.'</h3>';	
-											} else {
-												echo '<h3 class="features-title font-alt">'.$shop_isle_advantage->text.'</h3>';
-											}
-										endif;	
-
-										if( !empty($shop_isle_advantage->subtext) ):
-											if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-												$shop_isle_advantage_subtext = icl_t( 'Advantage '.$shop_isle_advantage->id ,'Advantage subtext', $shop_isle_advantage->subtext );
-												echo $shop_isle_advantage_subtext;
-											} else {
-												echo $shop_isle_advantage->subtext;
-											}	
-										endif;	
-									echo '</div>';
-
-								echo '</div>';
-					
-							endforeach;
-									
-						echo '</div>';
-									
-					endif;
-							
-				endif;
-				
-				?>
-
-			</div><!-- .container -->
-		</section>
-		<!-- Features end -->
 	
 <?php get_footer(); ?>
