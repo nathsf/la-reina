@@ -64,22 +64,13 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 					<?php if( class_exists( 'WooCommerce' ) ): ?>
 						<div class="navbar-cart">
 							
-							<div class="header-search">
-								<div class="glyphicon glyphicon-search header-search-button"></div>
-								<div class="header-search-input">
-									<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-										<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'shop-isle' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'shop-isle' ); ?>" />
-										<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'shop-isle' ); ?>" />
-										<input type="hidden" name="post_type" value="product" />
-									</form>
-								</div>
-							</div>
+							
 
 							<?php if( function_exists( 'WC' ) ): ?>
 								<div class="navbar-cart-inner">
 									<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents">
-										<span class="icon-basket"></span>
-										<span class="cart-item-number"><?php echo esc_html( trim( WC()->cart->get_cart_contents_count() ) ); ?></span>
+										<div class="icon-shopp"></div>
+										
 									</a>
 								</div>
 							<?php endif; ?>
