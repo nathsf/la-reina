@@ -2014,7 +2014,7 @@ Navbar
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-	background: #fff;
+	background: black!important;
 }
 
 .navbar-nav .menu-item-has-children>a:after,
@@ -4350,7 +4350,7 @@ Responsive Media Querries
 		float: left;
 		position: absolute;
 		top: 100%;
-		background: #1B1B1B;
+		background: #a1d808;
 		left: 0;
 		z-index: 9999999;
 	}

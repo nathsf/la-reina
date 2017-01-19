@@ -70,7 +70,6 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 								<div class="navbar-cart-inner">
 									<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents">
 										<div class="icon-shopp"></div>
-										
 									</a>
 								</div>
 							<?php endif; ?>

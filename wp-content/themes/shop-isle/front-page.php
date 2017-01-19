@@ -668,7 +668,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	}	/* END BANNERS */
 
 /* Wrapper start */
- 	echo '<div class="main">';
+ 	echo '<div class="main hidden-xs">';
  
  	/******************************/
  	/********    SLIDER   *********/
