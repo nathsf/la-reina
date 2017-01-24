@@ -104,6 +104,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					if( function_exists('woocommerce_get_product_thumbnail') ) {
 						echo '<a href="'.esc_url( get_permalink() ).'">' . woocommerce_get_product_thumbnail().'</a>';
 					}
+					
 					echo '<h4 class="shop-item-title font-alt white-title"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
 
 					$rating_html = '';
