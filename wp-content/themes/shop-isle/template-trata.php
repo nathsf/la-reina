@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying about us page.
+ * The template for displaying Tratamientos.
  *
  * Template Name: Tratamientos
  *
@@ -176,8 +176,11 @@ get_header(); ?>
 																			if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
 																				$shop_isle_team_member_description = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member description', $shop_isle_team_member->description );
 																				echo '<p class="font-serif">'.$shop_isle_team_member_description.'</p>';
+
 																			} else {
 																				echo '<p class="font-serif">'.$shop_isle_team_member->description.'</p>';
+																				echo '<div class="button-trata">Ver más</div>';
+
 																			}	
 																		echo '</div><!-- .team-detail -->';
 																	}	

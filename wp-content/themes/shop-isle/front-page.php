@@ -128,16 +128,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						if( !empty($format_string) ) {
 							switch ( $format_string ) {
 								case '%1$s%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price white-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
 									break;
 								case '%2$s%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price white-title">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 								case '%1$s&nbsp;%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price white-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
 									break;
 								case '%2$s&nbsp;%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price white-title">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 							}
 						} else {
@@ -189,7 +189,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					if( function_exists('woocommerce_get_product_thumbnail') ) {
 						echo '<a href="'.esc_url( get_permalink() ).'">' . woocommerce_get_product_thumbnail().'</a>';
 					}
-					echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
+					echo '<h4 class="shop-item-title font-alt white-title"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
 
 					$rating_html = '';
 					if( function_exists( 'method_exists' ) && method_exists( $product, 'get_rating_html' ) && method_exists( $product, 'get_average_rating' ) ) {
@@ -212,16 +212,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						if( !empty($format_string) ) {
 							switch ( $format_string ) {
 								case '%1$s%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
 									break;
 								case '%2$s%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 								case '%1$s&nbsp;%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
 									break;
 								case '%2$s&nbsp;%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 							}
 						} else {
@@ -384,7 +384,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					echo '</div><!-- .shop-item-detail -->';
 					echo '</div><!-- .shop-item-image -->';
 
-					echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
+					echo '<h4 class="shop-item-title font-alt black-title"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
 
 					$rating_html = '';
 					if( function_exists( 'method_exists' ) && method_exists( $product, 'get_rating_html' ) && method_exists( $product, 'get_average_rating' ) ) {
@@ -407,16 +407,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						if( !empty($format_string) ) {
 							switch ( $format_string ) {
 								case '%1$s%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
 									break;
 								case '%2$s%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 								case '%1$s&nbsp;%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
 									break;
 								case '%2$s&nbsp;%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 							}
 						} else {
@@ -507,7 +507,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					echo '</div><!-- .shop-item-detail -->';
 					echo '</div><!-- .shop-item-image -->';
 
-					echo '<h4 class="shop-item-title font-alt"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
+					echo '<h4 class="shop-item-title font-alt black-title"><a href="'.esc_url( get_permalink() ).'">'.get_the_title().'</a></h4>';
 
 					$rating_html = '';
 					if( function_exists( 'method_exists' ) && method_exists( $product, 'get_rating_html' ) && method_exists( $product, 'get_average_rating' ) ) {
@@ -530,16 +530,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						if( !empty($format_string) ) {
 							switch ( $format_string ) {
 								case '%1$s%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span>'.$shop_isle_price.'</span>';
 									break;
 								case '%2$s%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.'<span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 								case '%1$s&nbsp;%2$s' :
-									echo '<span class="shop-item-price"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
+									echo '<span class="shop-item-price black-title"><span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span> '.$shop_isle_price.'</span>';
 									break;
 								case '%2$s&nbsp;%1$s' :
-									echo '<span class="shop-item-price">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
+									echo '<span class="shop-item-price black-title">'.$shop_isle_price.' <span class="shop-item-currency">'.get_woocommerce_currency_symbol().'</span></span>';
 									break;
 							}
 						} else {
